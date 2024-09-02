@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #e5e5e5;
+  display: flex;
+  padding-top: 5rem;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0;
+}
+
+.row {
+  display: flex;
+  width: 600px;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.col-header {
+  width: 150px;
+  box-shadow: 4px 4px 9px rgba(198, 198, 198, 0.36);
+  border-radius: 20px;
+  padding: 0.8rem 1rem;
+  color: #fff;
+}
+
+.item {
+  width: 150px;
+  height: 66px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #00aaff, #0077aa);
+  padding: 0.8rem 1rem;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  cursor: grabbing;
+}
+
+.item:active {
+  cursor: grabbing;
+}
+
+.placeholder {
+  width: 150px;
+  height: 66px;
+  border-radius: 20px;
+}
+
+.col-header {
+  width: 150px;
+  height: 66px;
+  border-radius: 20px;
+  background: #f4c542; /* Основной цвет песка */
+  padding: 0.8rem 1rem;
+  text-align: center;
+  cursor: grab;
+  overflow: hidden;
+  position: relative;
+  color: #996600;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+  /* Добавляем текстуру песка */
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.4) 10%, transparent 20%),
+  radial-gradient(circle, rgba(0, 0, 0, 0.1) 10%, transparent 20%),
+  radial-gradient(circle, rgba(255, 255, 255, 0.3) 5%, transparent 15%);
+  background-size: 30px 30px, 40px 40px, 50px 50px;
+  background-position: 0 0, 15px 15px, 30px 30px;
+}
+
+
+.item:active {
+  cursor: grabbing;
+}
+
+.hold {
+  font-size: 1rem;
+  cursor: grabbing;
+  color: #ffffff;
+}
+
+.hide {
+  display: none;
+}
+
+.hovered {
+  border-top: 2px solid #8ed7ed;
+  cursor: grabbing;
+}
+
+/* Создание водяного эффекта для бордера */
+.item::before,
+.item::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border-radius: 30px;
+  border: 5px solid rgba(255, 255, 255, 0.5);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 20%, transparent 70%);
+  animation: wave 5s infinite linear;
+  opacity: 0.75;
+  z-index: 1;
+}
+
+.item::after {
+  animation-delay: 2.5s;
+}
+
+@keyframes wave {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.item p {
+  position: relative;
+  z-index: 10;
+}
